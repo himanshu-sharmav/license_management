@@ -1,0 +1,7 @@
+<h2>Create License</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="license_key" placeholder="Enter License Key" required>
+    <button type="submit">Create License</button>
+</form>
+<a href="{% url 'view_licenses' %}">View Licenses</a>

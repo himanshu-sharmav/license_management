@@ -1,0 +1,11 @@
+<h2>Your Licenses</h2>
+<ul>
+
+    {% csrf_token %}
+    {% for license in licenses %}
+        <li>{{ license.license_key }} - {% if license.is_active %}Active{% else %}Revoked{% endif %}
+            <a href="{% url 'revoke_license' license.id %}">Revoke</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_license' %}">Create New License</a>
